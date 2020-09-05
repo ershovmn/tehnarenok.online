@@ -7,15 +7,6 @@
     margin-bottom: 30px;
 }
 
-.home-section .left-sub-section {
-    flex: 1;
-    min-height: 350px;
-    height: 100%;
-    align-items: flex-end;
-    align-content: flex-end;
-    padding-top: 1%;
-}
-
 .home-section .section-header {
     color: white;
     margin-top: 0;
@@ -23,22 +14,11 @@
     background-color: #3a3939;
 }
 
-.home-section h1 {
-    color: white;
-    margin-left: 100px;
-    margin-top: 0;
-    margin-bottom: 0;
-}
 
 .home-section h1:hover {
     color: #e4e1e1;
 }
 
-.home-section .sub-section {
-    display: flex;
-    flex-direction: row;
-    flex: 1;
-}
 
 .home-section .right-sub-section {
     flex: 2;
@@ -58,4 +38,49 @@
 
 .home-section img {
     align-self: center;
+}
+
+@media screen and (min-width: 500px) {
+    .home-section .sub-section {
+        display: flex;
+        flex-direction: row;
+        flex: 1;
+    }
+
+    .home-section h1 {
+        color: white;
+        margin-left: 100px;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .home-section .left-sub-section {
+        flex: 1;
+        min-height: 350px;
+        height: 100%;
+        align-items: flex-end;
+        align-content: flex-end;
+        padding-top: 1%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .home-section .sub-section {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+
+    .home-section h1 {
+        color: white;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .home-section .left-sub-section {
+        flex: 1;
+        align-items: flex-end;
+        align-content: flex-end;
+        padding-top: 1%;
+    }
 }
