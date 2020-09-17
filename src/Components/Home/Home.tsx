@@ -1,9 +1,22 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Section, { HomeSectionProps } from './Section'
+import ReactMarkdown from 'react-markdown'
 
 import './Home.css'
 
 const Home = () => {
+    let [markdown, setMarkdown] = useState('')
+
+    useEffect(() => {
+        fetch(require('../../README.md'))
+            .then(response => {
+                return response.text()
+            })
+            .then(text => {
+                setMarkdown(text);
+            })
+    }, [])
+
     return (
         <div className='home-main'>
             {data.map((section : HomeSectionProps, index) => {

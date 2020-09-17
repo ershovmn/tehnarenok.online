@@ -20,15 +20,15 @@ const Header = () => {
                         <img src={require('../../img/logo2.png')} alt='logo' height='40px'/>
                     </a>
                     <div className='header-right' >
-                        <img onClick={() => setMenuVisible(!menuVisible)} src={require('../../img/menu.png')} height='40px'/>
+                        <img alt='' onClick={() => setMenuVisible(!menuVisible)} src={require('../../img/menu.png')} height='40px'/>
                     </div>
                 </div>
                 {menuVisible ? 
-                    <div className='header-menu'>
+                    <nav className='header-menu'>
                         <a href='/'>Главная</a>
                         <a href='/projects'>Проектики</a>
                         <a href='/blog'>Блог</a>
-                    </div>
+                    </nav>
                 : null }
             </>
         )
@@ -38,11 +38,11 @@ const Header = () => {
             <a className='logo' href='/'> 
                 <img src={require('../../img/logo2.png')} alt='logo' height='40px'/>
             </a>
-            <div className='header-right'>
+            <nav className='header-right'>
                 <a href='/'>Главная</a>
                 <a href='/projects'>Проектики</a>
                 <a href='/blog'>Блог</a>
-            </div>
+            </nav>
         </div>
     )
 }

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="theme-color" content="#000000" />
+        <meta name="description" content="Сайт-визитка себя"/>
+        <title>Ершов Михаил M33061</title>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="/">Home</a>
+                <a href="#about">About</a>
+                <a href="#blabla">Что-то интерсное</a>
+            </nav>
+        </header>
+        <main>
+            <article>
+                <section id='about'>
+                    <h1>Обо мне</h1>
+                    <p>
+                        Зовут меня Миша Ершов. </br>
+                        Мне нравится создавать полноценные приложения (веб, мобильные). Когда пишу проекты, весь код - это полёт фантазии. 
+                        Получаются довольно необычные, на первый взляд странные, непонятные решения, но они работают. </br>
+                        Cейчас я учусь в ИТМО, пока что не работаю. </br>
+                    </p>
+                    <h2>Что я умею</h2>
+                    <ul>
+                        <li>React JS</li>
+                        <li>React Native</li>
+                        <li>Node JS</li>
+                        <li>MongoDB</li>
+                        <li>Python</li>
+                        <li>C++</li>
+                        <li>C</li>
+                        <li>C#</li>
+                        <li>MySQL</li>
+                        <li>MsSQL</li>
+                        <li>Django</li>
+                    </ul>
+                </section>
+                <section id='blabla'>
+                    <h1>Что-то интерсное</h1>
+                    <h2>Моя любимая цитата</h2>
+                    <sub><b>Только дурак нуждается в порядке — гений господствует над хаосом</b></sub>
+                    <h2>Мой любимый кусочек кода</h2>
+                    <pre>
+                        <code>
+                            <dd>
+                                #!/bin/bash
+                                for item in $(grep -E "$1:" $HOME/.trash.log); do
+                                    path=$(echo "$item" | cut -d':' -f1)
+                                    name=$(echo "$item" | cut -d':' -f2)
+                                    hash=$(echo "$name" | awk -F'/' '{print($NF)}')
+                                    echo "$hash"
+                                    printf "Restore file %s Yes/No(y,n) " $path
+                                    read res
+                                    res=$(echo "$res" | tr [:upper:] [:lower:])
+                                    if [[ $res = "y"  ]] || [[ $res = "" ]] || [[ $res = "yes" ]]; then
+                                        dir=${path%"$1"}
+                                        if [[ -d $dir ]]; then
+                                            if [[ -f $path ]]; then
+                                                printf "File with the same name already exists. Want to rewrite Yes/No(y/n) "
+                                                read res1
+                                                if [[ $res1 = "y"  ]] || [[ $res1 = "" ]] || [[ $res1 = "yes" ]]; then
+                                                    rm $path
+                                                    ln -P $name $path
+                                                    sed -i "/$hash/d" $HOME/.trash.log
+                                                    rm $name
+                                                fi
+                                            else
+                                                ln -P $name $path
+                                                sed -i "/$hash/d" $HOME/.trash.log
+                                                rm $name
+                                            fi
+                                        else
+                                            echo "Dir $dir not found. File will be restored to the home dir"
+                                            ln -P $name "$HOME/$1"
+                                            sed -i "/$hash/d" $HOME/.trash.log
+                                            rm $hame
+                                        fi
+                                    fi
+                                done
+                            </dd>
+                        </code>
+                    </pre>
+                    <h2>Моё тотемной животное</h2>
+                    <p>
+                        Тест показал, что мое тотемное животное волк (<a target="_blank" href="https://testometrika.com/funny/totem-animal-test/">вот тут этот тест</a>)
+                    </p>
+                    <pre>
+                        __
+                        .d$$b
+                      .' TO$;\
+                     /  : TP._;
+                    / _.;  :Tb|
+                   /   /   ;j$j
+               _.-"       d$$$$
+             .' ..       d$$$$;
+            /  /P'      d$$$$P. |\
+           /   "      .d$$$P' |\^"l
+         .'           `T$P^"""""  :
+     ._.'      _.'                ;
+  `-.-".-'-' ._.       _.-"    .-"
+`.-" _____  ._              .-"
+-(.g$$$$$$$b.              .'
+ ""^^T$$$P^)            .(:
+   _/  -"  /.'         /:/;
+._.'-'`-'  ")/         /;/;
+`-.-"..--""   " /         /  ;
+.-" ..--""        -'          :
+..--""--.-"         (\      .-(\
+..--""              `-\(\/;`
+_.                      :
+                        ;`-
+                       :\
+                       ;  
+                    </pre>
+                </section>
+            </article>
+        </main>
+        <footer>
+
+        </footer>
+    </body>
+</html>

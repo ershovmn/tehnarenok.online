@@ -22,7 +22,7 @@ export interface HomeSectionProps {
 
 const Section = (props : HomeSectionProps) => {
     return (
-        <div className='home-section'>
+        <section className='home-section'>
             <div className='section-header'>
                 <h1>
                     {props.sectionHeader}
@@ -42,7 +42,7 @@ const Section = (props : HomeSectionProps) => {
                     })}
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 
